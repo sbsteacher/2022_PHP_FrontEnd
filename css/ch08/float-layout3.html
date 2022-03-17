@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3단 레이아웃</title>
+    <style>
+        #container { width: 1200px;  margin: 20px auto; }
+        header { height: 120px; background-color: antiquewhite; }
+        main { height: 700px; }
+        section { float: left; height: 700px; }
+        section:first-child { width: 250px; background-color: aqua; }
+        section:nth-child(2) { width: 800px; }
+        section:last-child { width: 150px; background-color: azure; }
+        footer { height: 100px; background-color: burlywood; }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <header>헤어</header>     
+        <main>
+            <section>사이드 바</section>
+            <section>본문</section>            
+            <section>사이드 바</section>
+        </main>
+        <footer>푸터</footer>
+    </div>
+</body>
+</html>
