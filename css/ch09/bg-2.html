@@ -8,6 +8,7 @@
     <style>
         ul { list-style-type: none; padding-left: 10px; }
         li { 
+            cursor: pointer;
             background: url('images/book-icon.png') 
             no-repeat left center;
             /*
@@ -17,16 +18,21 @@
             */
             padding-left: 50px;
             line-height: 40px;
-        }
+        }        
     </style>
 </head>
 <body>
     <h1>이지스퍼블리싱</h1>
     <ul>
-        <li>회사소개</li>
-        <li>도서</li>
-        <li>자료실</li>
-        <li>동영상강의</li>
+        <li onclick="moveTo('http://www.naver.com');">회사소개</li>
+        <li onclick="moveTo('http://www.daum.net');">도서</li>
+        <li onclick="moveTo('http://www.google.com');">자료실</li>
+        <li onclick="moveTo('http://www.naver.com');">동영상강의</li>
     </ul>
+    <script>
+        function moveTo(url) {
+            location.href = url;
+        }
+    </script>
 </body>
 </html>
