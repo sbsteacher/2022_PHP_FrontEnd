@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>  
+        img:focus { width: 100px; }
+        /* 
+           :focus는 키보드 이벤트에 반응할 수 있는 엘리먼트 
+           or 
+           사용자의 input(click, drag 등)에 반응할 수 있는 엘리먼트에 존재 
+
+           e.g. input, textarea, select, a, 
+
+           나머지 태그들은 tabindex 속성을 적용하면 존재하게 된다.
+        */ 
+        
+        div:focus { background-color: #f00; }    
+        select:focus { background-color: aqua; }
+        textarea:focus { background-color: #f00; }
+        ul:focus { background-color: aqua; }
+        ul { background-color: aliceblue; }
+        .navi ul li { display: inline-block; width: 150px; padding: 10px; }
+        .navi a:link, .navi a:visited { 
+            display: block; font-size: 14px; color: #000; 
+            padding: 10px;            
+            text-decoration: none;
+            text-align: center;
+        }
+        .navi a:hover, .navi a:focus { background-color: #222; color: #fff; }
+        .navi a:active { background-color: #f00; }
+    </style>
+</head>
+<body>
+    <img tabindex="1" src="https://newsimg-hams.hankookilbo.com/2022/02/02/5001865a-52f8-4e86-84be-dbf92dcdb3e8.jpg">
+    <div tabindex="2">aaaaa</div>
+    <textarea tabindex="3"></textarea>
+    <select tabindex="3">
+        <option>aaaa</option>
+    </select>
+    <nav class="navi">
+        <ul>
+            <li><a href="http://www.naver.com">이용 안내</a></li>
+            <li><a href="http://www.daum.net">객실 소개</a></li>
+            <li><a href="http://www.google.com">예약 방법 및 요금</a></li>
+            <li><a href="http://www.airbnb.com">예약하기</a></li>            
+            <li><a href="http://www.airbnb.com">예약하기2</a></li>    
+        </ul>
+    </nav>    
+    <script>
+        const aArr = document.querySelectorAll('a');
+        console.log(aArr);
+        aArr.forEach(function(item) {
+            item.setAttribute('target', '_blank');
+        });
+    </script>
+</body>
+</html>
