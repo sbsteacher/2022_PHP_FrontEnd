@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Transition</title>
+<style>
+	.box {
+		margin:50px auto;
+		width: 100px;
+		height: 100px;
+		background-color: #fb5;
+		border: 1px solid #222;
+		transition: all ease-in 2s;
+	}
+	.box:hover { 
+		width: 200px; 
+		height: 200px; 
+		background-color: #f50; 
+		transform: rotate(270deg); 
+	}
+	/*
+		가로, 세로 200px,
+		배경색 : #f50
+		270도 rotate
+
+		대상 all, 시간 2초, 함수 ease-in
+	*/
+</style>
+</head>
+
+<body>
+	<div class="box"></div>
+</body>
+</html>
