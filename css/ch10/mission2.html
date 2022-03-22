@@ -7,9 +7,14 @@
     <title>Document</title>
     <style>
         html { scroll-behavior: smooth; }
+        div { height: 300px; }
+        #sec1:target { background: url('images/1.jpg') no-repeat; background-size: contain; }  
+        #sec2:target { background: url('images/2.jpg') no-repeat; background-size: contain; }  
+        #sec3:target { background: url('images/3.jpg') no-repeat; background-size: contain; }  
+        div[id^='sec']:target { color: red; }
     </style>
 </head>
-<body>
+<body>    
     <ul>
         <li><a href="#sec1">섹션1</a></li>
         <li><a href="#sec2">섹션2</a></li>
@@ -17,15 +22,15 @@
     </ul>
     <div id="sec1">
         <h1>sec1</h1>
-        <img src="images/1.jpg">
+        <p>p1</p>
     </div>
     <div id="sec2">
         <h1>sec2</h1>
-        <img src="images/2.jpg">
+        <p>p2</p>
     </div>
     <div id="sec3">
         <h1>sec3</h1>
-        <img src="images/3.jpg">
+        <p>p3</p>
     </div>
 </body>
 </html>
