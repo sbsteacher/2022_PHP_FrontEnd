@@ -12,20 +12,24 @@
             padding: 0;
         }
         .flexbox {         
-            display: flex; flex-wrap: nowrap; gap: 10px; padding: 10px; background-color: #e8e8e8;
+            display: flex; 
+            flex-wrap: nowrap; 
+            gap: 10px; 
+            padding: 10px; 
+            background-color: #e8e8e8;
         }
-        .item { flex-basis: 200px;  min-height: 150px; flex-basis: 100px; }
-        .item:nth-child(odd) { background-color: aqua; flex-grow: 1; }
+        .item { flex-basis: 100px;  min-height: 150px; }
+        .item:nth-child(odd) { background-color: aqua; }
         .item:nth-child(even) { background-color: blueviolet }
     </style>
 </head>
 <body>
     <div class="layout">
         <div class="flexbox">
-            <item class="item">content1content1</item>
+            <item class="item" style="flex-grow: 1; flex-shrink: 1;">content1</item>
             <item class="item" style="flex-shrink: 0;">content2</item>
-            <item class="item">content3</item>
-            <item class="item">content4</item>
+            <item class="item" style="flex-shrink: 1;">content3</item>
+            <item class="item" style="flex-shrink: 3;">content4</item>
         </div>
     </div>
 </body>
