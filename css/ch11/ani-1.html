@@ -9,16 +9,13 @@
         .box { width: 100px; height: 100px; }
         #box1 { 
             background-color: #4cff00; border: 3px solid red; 
-           
+            animation-name: shape; 
+            animation-duration: 3s;  
+            animation-iteration-count: infinite;
         }
         #box2 {
             background-color: #8f06b0;
             border: 1px solid transparent;
-        }
-
-        #box1:hover { 
-            animation-name: shape; 
-            animation-duration: 3s;            
         }
 
         #box2:hover { 
@@ -30,7 +27,7 @@
             to { border: 3px solid #000; border-radius: 50%; }
         }
         @keyframes ddd {            
-            to { transform: rotate(45deg); }
+            to { transform: rotate(270deg); }
         }
     </style>
 </head>
