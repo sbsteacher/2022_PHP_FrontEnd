@@ -26,11 +26,11 @@
         </ul>
     </div>
     <div id="lightbox">
-        <img src="https://i.picsum.photos/id/668/500/300.jpg?hmac=AW8K0gj9uyjAm6pNwcFcQ8iycFCzN6doL4MROna3YJ4" id="lightboxImage">
+        <img id="lightboxImage" src="https://i.picsum.photos/id/668/500/300.jpg?hmac=AW8K0gj9uyjAm6pNwcFcQ8iycFCzN6doL4MROna3YJ4">
     </div>
     <script>
         const lightbox = document.querySelector('#lightbox');
-        const lightboxImage = document.querySelector('#lightboxImage');
+        const lightboxImage = lightbox.querySelector('#lightboxImage');
         function showLightbox() {
             const bigLocation = this.src;
             lightboxImage.setAttribute('src', bigLocation);
