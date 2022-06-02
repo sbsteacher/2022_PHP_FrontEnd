@@ -9,10 +9,14 @@
 <body>
     <script>
         const arr = ['A', 'B', 'C'];
-        const arr2 = arr.concat(['D', 'E']);
-        console.log(arr2);
+        const arr2 = ['D', 'E'];
+        const arr3 = arr.concat(arr2);
+        console.log(arr3);
         console.log(arr);
-        console.log(['D', 'E'].concat(arr));
+        console.log(arr2);
+        console.log(arr2.concat(arr));
+        const arr4 = [...arr, ...arr2]; // Spread Operator
+        console.log(arr4);
     </script>    
 </body>
 </html>

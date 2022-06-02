@@ -9,8 +9,10 @@
 <body>
     <script>
         const now = new Date();
-        const writedDay = new Date('2022-02-28 13:27:00');
-
+        const writedDay = new Date('2021-12-16 13:27:00');
+        
+        const result = getPassedInfo(writedDay, now);
+        console.log(result);
         //1~59분 전 => 3,540
         //1~23시간 전 => 82800
         //1~15일 전 60 * 60 * 24 * 15 => 1,296,000
@@ -21,17 +23,17 @@
             const eDateMilSec = eDate.getTime();
             const passedSec = (eDateMilSec - sDateMilSec) / 1000;
 
-            if(passedSec < 3540) {
+            if(passedSec < 3599) { //59분 59초 전
                 const min = Math.floor(passedSec / 60);
                 return `${min}분 전`;
             } else if(passedSec < 82800) {
-                const hour = Math.floor(passedSec / 3600);
+                const hour = Math.round(passedSec / 3600);
                 return `${hour}시간 전`;
             } else if(passedSec < 1296000) {
-                const date = Math.floor(passedSec / 86400);
+                const date = Math.round(passedSec / 86400);
                 return `${date}일 전`;
             } else if(passedSec < 7776000) {
-                const mon = Math.floor(passedSec / 2592000);
+                const mon = Math.round(passedSec / 2592000);
                 return `${mon}달 전`;
             } else {
                 const year = sDate.getFullYear();
@@ -45,8 +47,7 @@
             return ('0' + val).slice(-2);
         }
 
-        const result = getPassedInfo(writedDay, now);
-        console.log(result);
+     
 
     </script>
 </body>
