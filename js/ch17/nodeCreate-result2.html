@@ -20,16 +20,7 @@
         <input type="button" value="추가" onclick="newReg();">
         <input type="button" value="삭제" onclick="delSubject();">
     </div>
-    <div id="itemList">
-        <div class="parent">
-            <div class="content">test1</div>
-            <div class="close c_pointer">X</div>
-        </div>  
-        <div class="parent">
-            <div class="content">ddd</div>
-            <div class="close c_pointer">X</div>
-        </div>
-    </div>
+    <div id="itemList"></div>
     <script>
         const inputSubject = document.querySelector('#subject');        
         const divItemList = document.querySelector('#itemList');
@@ -41,7 +32,7 @@
             newDiv.innerHTML = `
                 <div class="content">${txt}</div>
                 <div class="close c_pointer">X</div>
-            `;            
+            `;
             divItemList.appendChild(newDiv);     
             const divClose = newDiv.querySelector('.close');
             divClose.addEventListener('click', function() {
