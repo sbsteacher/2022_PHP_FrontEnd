@@ -6,25 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * { box-sizing: border-box; }        
-        nav > ul { list-style: none; }
+        * { box-sizing: border-box; }
+        nav > ul { list-style: none; } 
         nav > ul > li {
             display: inline-block;
             padding: 20px;
             margin: 0 20px;
-            border: 1px solid #222;
-            cursor: pointer;
+                    
         }
+        .c_pointer { cursor: pointer; }
+        .border_1_black { border: 1px solid #222; }
     </style>
 </head>
 <body>
+    <span style="display: inline-block; background-color:aquamarine;padding:20px; margin:100px;">aaaa</span>
     <div id="container">
-        <nav>
+        <nav>           
             <ul>
-                <li>menu 1</li>
-                <li>menu 2</li>
-                <li>menu 3</li>
-                <li>menu 4</li>
+                <li class="c_pointer border_1_black">menu 1</li>
+                <li class="c_pointer border_1_black">menu 2</li>
+                <li class="c_pointer border_1_black">menu 3</li>
+                <li class="c_pointer border_1_black">menu 4</li>
             </ul>
         </nav>
         

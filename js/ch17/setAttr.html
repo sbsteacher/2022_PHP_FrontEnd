@@ -27,7 +27,8 @@
         const subImgs = document.querySelectorAll('#sub > img');
         subImgs.forEach(item => {
             item.addEventListener('click', () => {
-                imgMain.src = item.src;
+                //imgMain.src = item.src;
+                imgMain.setAttribute('src', item.getAttribute('src'));
             });
         });
     </script>
