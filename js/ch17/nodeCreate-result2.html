@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>Web Programming</h1>
-    <p>공부할 주제를 기록해 보세요.</p>
+    <p>공부할 주제를 기록해 보세요. ver.2</p>
     <div>
         <input type="text" id="subject" value="">
         <input type="button" value="추가" onclick="newReg();">
@@ -37,6 +37,7 @@
             const divClose = newDiv.querySelector('.close');
             divClose.addEventListener('click', function() {
                 //newDiv.remove();
+                //divClose.parentElement.remove();
                 this.parentElement.remove();
             });            
             inputSubject.value = '';
