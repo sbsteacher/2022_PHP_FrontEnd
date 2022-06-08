@@ -22,9 +22,9 @@
     </ul>
     <script>
         const checkList = document.querySelectorAll('.check');
-        checkList.forEach(item => {
+        checkList.forEach(function(item) {
             item.addEventListener('click', (e) => {
-                e.target.classList.toggle('checked');
+                e.target.classList.toggle('checked');                
                 console.log(e.target.classList);          
             });
         });
