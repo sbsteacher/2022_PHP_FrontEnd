@@ -28,6 +28,7 @@
         });
         */  
         //2번 콜백
+        
         const p2 = p1.then(function(result) {
             console.log(`p1 : ${result}`);
             return 'hello';
@@ -36,7 +37,17 @@
         p2.then(function(result) {
             console.log(`p2 : ${result}`);
         });
+        
 
+        //line.32 ~ 39을 아래와 같이 작성할 수 있다.
+        /*
+        p1.then(function(result) {
+            console.log(`p1 : ${result}`);
+            return 'hello';
+        }).then(function(result) {
+            console.log(`p2 : ${result}`);
+        });
+        */
         
     </script>
 </body>
