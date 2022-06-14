@@ -21,13 +21,24 @@
         }
 
         function createIconEditor(parent, nx, ny) {
-            
+            const cells = [];
             //color input 
             const inputColor = elt('input', {type: 'color'});
             parent.appendChild(inputColor);
 
             //All Clear button
             const btnAllClear = elt('input', {type:'button', value:'All Clear'});
+            btnAllClear.addEventListener('click', function(e) {
+                /*
+                const tdList = document.querySelectorAll('td');                
+                tdList.forEach(function(item) {
+                    item.style.backgroundColor = '';
+                });
+                */
+               cells.forEach(function(item) {
+                    item.style.backgroundColor = '';
+                });
+            });
             parent.appendChild(btnAllClear);
 
             //table
@@ -42,38 +53,26 @@
                 table.appendChild(tr);
 
                 for(let z=0; z<nx; z++) {                    
-                    const td = elt('td');                    
+                    const td = elt('td');   
+                    cells.push(td);                 
                     tr.appendChild(td);
 
                     td.style.width = td.style.height = '15px';
-                    td.style.border = '1px solid #000';
-                    
+                    td.style.border = '1px solid #000';                    
+
                     td.addEventListener('click', function(e) {
-                        const rgbToHex = convertRGBtoHex(e.target.style.backgroundColor);
-                        console.log(rgbToHex);
-                        console.log(inputColor.value);
-                        
-                        if(e.target.style.backgroundColor === '' || rgbToHex !== inputColor.value) {
+                        if(e.target.style.backgroundColor === '' || e.target.color16 !== inputColor.value) {
                             e.target.style.backgroundColor = inputColor.value;
-                        } else if(rgbToHex === inputColor.value || e.target.style.backgroundColor !== '') {
+                            e.target.color16 = inputColor.value;
+                        } else { 
                             e.target.style.backgroundColor = '';
                         }
                     });
                 }
             }
         }
-        function convertRGBtoHex(rgb) {
-            if(rgb === '') {
-                return '';
-            }
-            const colors = rgb.substring(rgb.indexOf('(') + 1, rgb.lastIndexOf(')')).split(/,\s*/);
-            return '#' + colorToHex(colors[0]) + colorToHex(colors[1]) + colorToHex(colors[2]);
-        }
 
-        function colorToHex(color) {
-            var hexadecimal = color.toString(16);
-            return hexadecimal.length == 1 ? "0" + hexadecimal : hexadecimal;
-        }
+       
 
         createIconEditor(document.body, 10, 5);
     </script>
